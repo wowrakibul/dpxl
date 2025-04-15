@@ -1,9 +1,13 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f9f9f9;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
@@ -34,27 +38,108 @@ header nav button:hover {
   color: white;
 }
 
-#main-content {
-  padding: 1rem;
+main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
-.editor {
-  border: 1px solid #ccc;
+aside {
+  width: 20%;
+  background: #f4f4f4;
   padding: 1rem;
-  border-radius: 5px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+#post-list {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.post-card {
   background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
-.dashboard-table {
-  width: 100%;
-  border-collapse: collapse;
+.post-card h2 {
+  margin: 0 0 0.5rem;
 }
 
-.dashboard-table th, .dashboard-table td {
+.post-card .meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post-card .description {
+  margin: 0.5rem 0;
+}
+
+.post-card .tags {
+  margin-bottom: 0.5rem;
+}
+
+.post-card .tags .tag {
+  display: inline-block;
+  background: #e4e4e4;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+
+.post-card .actions button {
+  background: none;
   border: 1px solid #ddd;
   padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
-.dashboard-table th {
-  background: #f4f4f4;
+.post-card .actions .publish-btn {
+  background: #28a745;
+  color: white;
+}
+
+.post-card .actions .unpublish-btn {
+  background: #ffc107;
+  color: white;
+}
+
+.post-card .actions .delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.post-card .actions button:hover {
+  opacity: 0.9;
+}
+
+.filters, .tags, .sort {
+  margin-bottom: 1rem;
+}
+
+.filters button, .tags button, .sort button {
+  background: none;
+  border: none;
+  color: #0078D7;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.filters button.active, .sort button.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#search-bar {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
