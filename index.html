@@ -3,24 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idea Platform</title>
+  <title>Idea Publish Hub</title>
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div id="app">
+    <!-- Header Section -->
     <header>
-      <h1>Idea Platform</h1>
+      <h1>Idea Publish Hub</h1>
       <nav>
-        <button id="create-post-btn">Create Post</button>
         <button id="dashboard-btn">Dashboard</button>
+        <button id="new-post-btn">New Post</button>
+        <button id="public-view-btn">Public View</button>
       </nav>
     </header>
-    <main id="main-content">
-      <!-- Content will be dynamically injected -->
+
+    <!-- Main Content -->
+    <main>
+      <!-- Sidebar -->
+      <aside>
+        <input type="text" placeholder="Search ideas..." id="search-bar">
+        <div class="filters">
+          <h3>Filter</h3>
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Published</button>
+          <button class="filter-btn">Private</button>
+          <button class="filter-btn">Drafts</button>
+        </div>
+        <div class="tags">
+          <h3>Tags</h3>
+          <button class="tag-btn">draft</button>
+          <button class="tag-btn">ideas</button>
+          <button class="tag-btn">organization</button>
+          <button class="tag-btn">productivity</button>
+          <button class="tag-btn">tips</button>
+          <button class="tag-btn">tutorial</button>
+          <button class="tag-btn">welcome</button>
+        </div>
+        <div class="sort">
+          <h3>Sort By</h3>
+          <button class="sort-btn active">Last Updated</button>
+          <button class="sort-btn">Newest</button>
+          <button class="sort-btn">Oldest</button>
+        </div>
+      </aside>
+
+      <!-- Post List -->
+      <section id="post-list">
+        <div class="post-card">
+          <h2>Getting Started with Rich Text Editing</h2>
+          <p class="meta">1 day ago • Public • 2 min read</p>
+          <p class="description">Learn how to use the core features of your new rich text editor platform.</p>
+          <div class="tags">
+            <span class="tag">welcome</span>
+            <span class="tag">tutorial</span>
+          </div>
+          <div class="actions">
+            <button class="unpublish-btn">Unpublish</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div class="post-card">
+          <h2>My First Draft</h2>
+          <p class="meta">Less than a minute ago • Private • 1 min read</p>
+          <p class="description">This is a draft post that I'm working on. It's not ready to be published yet.</p>
+          <div class="tags">
+            <span class="tag">draft</span>
+            <span class="tag">ideas</span>
+          </div>
+          <div class="actions">
+            <button class="publish-btn">Publish</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
-  <script src="scripts/editor.js"></script>
-  <script src="scripts/dashboard.js"></script>
-  <script src="scripts/public-view.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
